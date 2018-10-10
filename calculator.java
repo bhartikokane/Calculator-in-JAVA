@@ -1,54 +1,54 @@
 import java.util.Scanner;
 
-public class JavaExample {
-
-    public static void main(String[] args) {
-
-    	double num1, num2;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter first number:");
-
-        /* We are using data type double so that user
-         * can enter integer as well as floating point
-         * value
-         */
-        num1 = scanner.nextDouble();
-        System.out.print("Enter second number:");
-        num2 = scanner.nextDouble();
-
-        System.out.print("Enter an operator (+, -, *, /): ");
-        char operator = scanner.next().charAt(0);
-
-        scanner.close();
-        double output;
-
-        switch(operator)
+public class JavaProgram
+{
+    public static void main(String args[])
+    {
+        float a, b, res;
+        char choice, ch;
+        Scanner scan = new Scanner(System.in);
+		
+        do
         {
-            case '+':
-            	output = num1 + num2;
-                break;
-
-            case '-':
-            	output = num1 - num2;
-                break;
-
-            case '*':
-            	output = num1 * num2;
-                break;
-
-            case '/':
-            	output = num1 / num2;
-                break;
-
-            /* If user enters any other operator or char apart from
-             * +, -, * and /, then display an error message to user
-             * 
-             */
-            default:
-                System.out.printf("You have entered wrong operator");
-                return;
-        }
-
-        System.out.println(num1+" "+operator+" "+num2+": "+output);
+            System.out.print("1. Addition\n");
+            System.out.print("2. Subtraction\n");
+            System.out.print("3. Multiplication\n");
+            System.out.print("4. Division\n");
+            System.out.print("5. Exit\n\n");
+            System.out.print("Enter Your Choice : ");
+            choice = scan.next().charAt(0);
+            switch(choice)
+            {
+                case '1' : System.out.print("Enter Two Number : ");
+                    a = scan.nextFloat();
+                    b = scan.nextFloat();
+                    res = a + b;
+                    System.out.print("Result = " + res);
+                    break;
+                case '2' : System.out.print("Enter Two Number : ");
+                    a = scan.nextFloat();
+                    b = scan.nextFloat();
+                    res = a - b;
+                    System.out.print("Result = " + res);
+                    break;
+                case '3' : System.out.print("Enter Two Number : ");
+                    a = scan.nextFloat();
+                    b = scan.nextFloat();
+                    res = a * b;
+                    System.out.print("Result = " + res);
+                    break;
+                case '4' : System.out.print("Enter Two Number : ");
+                    a = scan.nextFloat();
+                    b = scan.nextFloat();
+                    res = a / b;
+                    System.out.print("Result = " + res);
+                    break;
+                case '5' : System.exit(0);
+                    break;
+                default : System.out.print("Wrong Choice!!!");
+                    break;
+            }
+            System.out.print("\n---------------------------------------\n");
+        }while(choice != 5);       
     }
 }
